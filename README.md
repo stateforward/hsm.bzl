@@ -8,6 +8,8 @@ analysis, not inside a long-lived application process.
 
 ## Install
 
+<!-- module name and version from MODULE.bazel -->
+
 With Bzlmod:
 
 ```starlark
@@ -57,6 +59,8 @@ so consumers may safely lower them to their own runtime and resolve targets in
 their own model index.
 
 ## API
+
+<!-- public builders exported by hsm.bzl -->
 
 The `hsm` namespace exposes `define`, `state`, `final`, `initial`,
 `transition`, `on`, `after`, `target`, `guard`, `effect`, `entry`, `exit`,
