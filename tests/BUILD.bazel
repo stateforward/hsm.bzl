@@ -1,0 +1,3 @@
+load(":hsm_test.bzl", "hsm_test")
+
+hsm_test(name = "hsm_test")
