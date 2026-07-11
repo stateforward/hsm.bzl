@@ -1,8 +1,8 @@
 """A portable hierarchical state-machine DSL for Starlark.
 
-The builders return immutable-shaped dictionaries so callers can inspect, serialize,
-or lower a model into a host runtime. `define` validates the complete topology:
-state names and target paths, initial transitions, and callback/event declarations.
+The builders return plain model dictionaries so callers can inspect, serialize, or
+lower a model into a host runtime. `define` validates each declared container's
+initial transitions, element shapes, callback names, and event declarations.
 """
 
 def _element(kind, **fields):
@@ -32,7 +32,7 @@ def event(name, schema = {}, description = None, examples = ()):
     }
 
 def define(name, *elements):
-    """Defines and validates a complete HSM model."""
+    """Defines a static HSM model and validates its declared container."""
     model = _element("define", name = name, elements = tuple(elements))
     _validate_model(model)
     return model
