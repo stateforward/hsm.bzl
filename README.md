@@ -1,6 +1,6 @@
-# stateforward/hsm.star
+# stateforward/hsm.bzl
 
-`hsm.star` is a dependency-free, portable HSM model DSL for Bazel Starlark.
+`hsm.bzl` is a dependency-free, portable HSM model DSL for Bazel Starlark.
 It constructs validated model dictionaries that can be serialized, inspected in
 analysis, or lowered into a host runtime. It deliberately does not pretend to
 be an executable state-machine runtime: Bazel evaluates Starlark during build
@@ -21,7 +21,7 @@ Until a Bazel Central Registry release exists, use a source override:
 ```starlark
 git_override(
     module_name = "stateforward_hsm",
-    remote = "https://github.com/stateforward/hsm.star.git",
+    remote = "https://github.com/stateforward/hsm.bzl.git",
     commit = "<commit>",
 )
 ```
