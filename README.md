@@ -6,6 +6,9 @@ analysis, or lowered into a host runtime. It deliberately does not pretend to
 be an executable state-machine runtime: Bazel evaluates Starlark during build
 analysis, not inside a long-lived application process.
 
+A host runtime lowering these models must expose the empty string (`""`) as a
+machine's observable state before start and after stop.
+
 ## Install
 
 <!-- module name and version from MODULE.bazel -->
@@ -13,7 +16,7 @@ analysis, not inside a long-lived application process.
 With Bzlmod:
 
 ```starlark
-bazel_dep(name = "stateforward_hsm", version = "0.1.0")
+bazel_dep(name = "stateforward_hsm", version = "0.1.1")
 ```
 
 Until a Bazel Central Registry release exists, use a source override:
